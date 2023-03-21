@@ -87,3 +87,34 @@ const updateFilter = () => {
 };
 
 filterSlider.addEventListener("input", updateFilter);
+
+// rotate
+rotateOptions.forEach((option) => {
+  option.addEventListener("click", () => {
+    if (option.id === "left") {
+      rotate -= 90;
+    } else if (option.id === "right") {
+      rotate += 90;
+    } else if (option.id === "horizontal") {
+      flipHorizontal = flipHorizontal === 1 ? -1 : 1;
+    } else {
+      flipVertical = flipVertical === 1 ? -1 : 1;
+    }
+    applyFilter();
+  });
+});
+
+// reset the settings
+const resetFilter = () => {
+  brightness = "100";
+  saturation = "100";
+  inversion = "0";
+  grayscale = "0";
+  rotate = 0;
+  flipHorizontal = 1;
+  flipVertical = 1;
+  filterOptions[0].click();
+  applyFilter();
+};
+
+resetFilterBtn.addEventListener("click", resetFilter);
