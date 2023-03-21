@@ -69,3 +69,21 @@ filterOptions.forEach((option) => {
     }
   });
 });
+
+const updateFilter = () => {
+  filterValue.innerText = `${filterSlider.value}%`;
+  const selectedFilter = document.querySelector(".filter .active");
+
+  if (selectedFilter.id === "brightness") {
+    brightness = filterSlider.value;
+  } else if (selectedFilter.id === "saturation") {
+    saturation = filterSlider.value;
+  } else if (selectedFilter.id === "inversion") {
+    inversion = filterSlider.value;
+  } else {
+    grayscale = filterSlider.value;
+  }
+  applyFilter();
+};
+
+filterSlider.addEventListener("input", updateFilter);
