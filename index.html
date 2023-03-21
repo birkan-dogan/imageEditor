@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Image Editor</title>
     <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/7666/7666585.png"
+      type="image/x-icon"
+    />
   </head>
   <body>
     <div class="container">
@@ -54,17 +59,9 @@
       <div class="controls">
         <button class="reset-filter">Reset Filters</button>
         <div class="row">
-          <input
-            type="file"
-            class="file-input"
-            id="fileInput"
-            accept="image/*"
-            hidden
-          />
+          <input type="file" class="file-input" accept="image/*" hidden />
           <!-- image/*	The user can pick all image files -->
-          <button class="choose-img">
-            <label for="fileInput" style="cursor: pointer">Choose Image</label>
-          </button>
+          <button class="choose-img">Choose Image</button>
           <button class="save-img">Save Image</button>
         </div>
       </div>

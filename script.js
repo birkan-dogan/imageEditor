@@ -118,3 +118,33 @@ const resetFilter = () => {
 };
 
 resetFilterBtn.addEventListener("click", resetFilter);
+
+// save image
+const saveImage = () => {
+  // https://www.w3schools.com/tags/ref_canvas.asp  to learn canvas
+  const canvas = document.createElement("canvas");
+  const ctx = canvas.getContext("2d");
+  canvas.width = image.naturalWidth;
+  canvas.height = image.naturalHeight;
+
+  ctx.filter = `brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`;
+  ctx.translate(canvas.width / 2, canvas.height / 2);
+  if (rotate !== 0) {
+    ctx.rotate((rotate * Math.PI) / 180);
+  }
+  ctx.scale(flipHorizontal, flipVertical);
+  ctx.drawImage(
+    image,
+    -canvas.width / 2,
+    -canvas.height / 2,
+    canvas.width,
+    canvas.height
+  );
+
+  const link = document.createElement("a");
+  link.download = "image.jpg";
+  link.href = canvas.toDataURL();
+  link.click();
+};
+
+saveImgBtn.addEventListener("click", saveImage);
