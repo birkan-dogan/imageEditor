@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JavaScript Image Editor</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Image Editor</h2>
+      <div class="wrapper">
+        <div class="editor-panel">
+          <div class="filter"></div>
+          <div class="rotate"></div>
+        </div>
+        <div class="preview-img"></div>
+      </div>
+      <div class="controls">
+        <button class="reset-filter">Reset Filters</button>
+        <div class="row">
+          <input type="file" class="file-input" accept="image/*" hidden />
+          <!-- image/*	The user can pick all image files -->
+          <button class="choose-img">Choose Image</button>
+          <button class="save-img">Save Image</button>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
